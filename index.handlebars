@@ -1,0 +1,26 @@
+<div class="jumbotron">
+  <h1 class="display-4">Welcome to BlogApp</h1>
+  <p class="lead">This is a simple blog intend to Create,Edit and Delete Posts there are divided by Categories of
+    programming languages. BlogApp is developed by Node.Js + Express + MongoDB</p>
+  <hr class="my-4">
+  <p>BlogApp is a place to find great articles about programming languages</p>
+  <a class="btn btn-primary btn-lg" href="/users/register" role="button">Create Account</a>
+</div>
+<hr>
+
+<h2>Recent Posts :</h2>
+
+{{#each posts}}
+<div class="card mt-4">
+  <div class="card-body">
+    <h3>{{title}}</h3>
+    <p>{{description}}</p>
+    <a href="/post/{{slug}}"><button class="btn btn-success">Read More</button></a>
+    <hr>
+    <small>Category: {{category.name}}</small><br>
+    <small>Publish Date: {{date}}</small>
+  </div>
+</div>
+{{else}}
+<h5>No Posts</h5>
+{{/each}}
